@@ -1,175 +1,166 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .game {
-    width: 100%;
-    background-image: url("./img/background.gif");
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
-    height: 900px;
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-  }
-  
-  .mountain {
-    position: absolute;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .mountainimg {
-    width: 100%;
-    height: 500px;
-    z-index: 1;
-  }
-  
-  .avatar {
-    z-index: 3;
-    position: absolute;
-    top: 4%;
-    left:3%;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items:flex-start;
-    
-  }
-  
-  #avatar {
-    height: 130px;
-    width: 100px;
-    border:3px solid orangered;
-  }
-  
-  .pressBtn {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding-top:15px;
-    
-  }
-  
-  span.btn {
-    font-weight: bold;
-  }
-  
-  .score {
-    z-index: 3;
-    position: absolute;
-    top: 4%;
-    left:10%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-  
-  }
-  
-  
-  #score {
-    width: 106px;
-    height: 60px;
-  }
-  
-  #scorecount {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-  }
-  
-  .lines {
-    width: 50px;
-    height: 6px;
-    background-image: url("./img/platform.gif");
-    z-index: 2;
-    position: absolute;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
-  }
-  
-  .climber {
-    z-index: 3;
-    position: absolute;
-  }
-  
-  .climberimg {
-    height: 100px;
-    width: 150px;
-  }
-  
-  .flag {
-    position: absolute;
-    bottom: 68%;
-    left:83%;
-    z-index:4;
-  }
-  
-  .flagimg {
-    height: 200px;
-    width: 200px;
-    visibility: hidden;
-  }
-  
-  
-  .enemy {
-    z-index: 3;
-    position: absolute;
-    bottom: 70%;
-    left: 85%;
-  }
-  
-  #enemy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game {
+  width: 100%;
+  background-image: url('./img/backgif.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 900px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.mountain {
+  position: absolute;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.mountainimg {
+  width: 100%;
+  height: 500px;
+  z-index: 1;
+}
+
+.avatar {
+  z-index: 3;
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+#avatar {
+  height: 130px;
+  width: 100px;
+  border: 3px solid orangered;
+}
+
+.pressBtn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  padding-top: 15px;
+}
+
+span.btn {
+  font-weight: bold;
+}
+
+.score {
+  z-index: 3;
+  position: absolute;
+  top: 4%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#score {
+  width: 106px;
+  height: 60px;
+}
+
+#scorecount {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.lines {
+  width: 50px;
+  height: 6px;
+  background-color: black;
+  z-index: 2;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.climber {
+  z-index: 3;
+  position: absolute;
+}
+
+.climberimg {
+  height: 100px;
+  width: 150px;
+}
+
+.flag {
+  position: absolute;
+  bottom: 68%;
+  left: 83%;
+  z-index: 4;
+}
+
+.flagimg {
+  height: 200px;
+  width: 200px;
+  visibility: hidden;
+}
+
+.enemy {
+  z-index: 3;
+  position: absolute;
+  bottom: 70%;
+  left: 85%;
+}
+
+#enemy {
   height: 100px;
   width: 105px;
-  }
-  
-  .fireball {
-    z-index: 3;
-    position: absolute;
-    bottom: 81%;
-    left: 41%;
-  }
-  
-  
-  
-  
-  #line1 {
-    bottom: 10%;
-    left: 10%;
-  }
-  
-  #line2 {
-    bottom: 23%;
-    left: 17%;
-  }
-  
-  #line3 {
-    bottom: 37%;
-    left: 24%;
-  }
-  
-  #line4 {
-    bottom: 35%;
-    left: 35%;
-  }
-  
-  #line5 {
-    bottom: 53%;
-    left: 42%;
-  }
-  
-  #line6 {
-    bottom: 30%;
-    left: 57%;
-  }
-  
-  #line7 {
-    bottom: 56%;
-    left: 73%;
-  }
-  
+}
+
+.fireball {
+  z-index: 3;
+  position: absolute;
+  bottom: 81%;
+  left: 41%;
+}
+
+#line1 {
+  bottom: 10%;
+  left: 10%;
+}
+
+#line2 {
+  bottom: 23%;
+  left: 17%;
+}
+
+#line3 {
+  bottom: 37%;
+  left: 24%;
+}
+
+#line4 {
+  bottom: 35%;
+  left: 35%;
+}
+
+#line5 {
+  bottom: 53%;
+  left: 42%;
+}
+
+#line6 {
+  bottom: 30%;
+  left: 57%;
+}
+
+#line7 {
+  bottom: 56%;
+  left: 73%;
+}

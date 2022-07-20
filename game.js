@@ -1,3 +1,6 @@
+let move = document.querySelectorAll('.lines');
+let climber = document.querySelector('.climber');
+
 let position = 0;
 let score = 0;
 let scoreCount = document.querySelector('#scorecount');
@@ -23,3 +26,40 @@ var downloadTimer = setInterval(function () {
 
   timeleft -= 1;
 }, 1200);
+
+//Movment
+document.addEventListener('keydown', function (event) {
+  if (event.code === 'KeyX') {
+    move[position + 1].appendChild(climber);
+    position++;
+    score += 1000;
+    scoreCount.innerText = score;
+    if (position === move.length - 1) {
+      flag.style.visibility = 'visible';
+      enemy.style.visibility = 'hidden';
+      let winner = document.createElement('div');
+      let winnerGif = document.createElement('img');
+      winnerGif.src = './img/youwin.png';
+      winner.style.cssText = `
+        position: absolute;
+        display:flex;
+        align-self:center;
+        z-index:11;`;
+      area.appendChild(winner);
+      winner.appendChild(winnerGif);
+      setTimeout(function () {
+        location.reload();
+      }, 3000);
+    }
+  } else if (event.code === 'KeyZ') {
+    move[position - 1].appendChild(climber);
+    position--;
+    score -= 1000;
+    scoreCount.innerText = score;
+    scoreCountDiv.innerText -= 100;
+    if (position !== move.length - 1) {
+      flag.style.visibility = 'hidden';
+      enemy.style.visibility = 'visible';
+    }
+  }
+});
