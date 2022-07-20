@@ -128,3 +128,61 @@ function draw(timePassed) {
   fire.style.top = (timePassed * 0.95) / 25 + '%';
   //fire.style.left = (timePassed * 0.95 / 23) + '%'
 }
+
+const fire2 = document.createElement('div');
+fire2.style.cssText = `
+    width: 10%;
+    position: absolute;
+    bottom: 100%;
+    left: 26%;
+    z-index: 2;
+    `;
+const fire2gif = document.createElement('img');
+fire2gif.src = './img/fireball.gif';
+fire2gif.style.cssText = `
+height: 80px;
+width: 80px;
+`;
+
+fire2.appendChild(fire2gif);
+area.appendChild(fire2);
+
+let fire2Fly = setInterval(function () {
+  let start = Date.now();
+  let timer = setInterval(function () {
+    let timePassed = Date.now() - start;
+    if (timePassed >= 2000) {
+      clearInterval(timer);
+      return;
+    }
+    if (position !== move.length - 1) {
+      if (timePassed < 2500) {
+        draw2(timePassed);
+      }
+    }
+    let climberRect = climber.getBoundingClientRect();
+    let fire2Rect = fire2gif.getBoundingClientRect();
+    if (
+      climberRect.top < fire2Rect.top &&
+      climberRect.bottom > fire2Rect.bottom &&
+      climberRect.right > fire2Rect.right &&
+      climberRect.left < fire2Rect.left
+    ) {
+      let climberimg = document.querySelector('.climberimg');
+      climberimg.src = './img/explode.gif';
+      climberimg.style.cssText = `
+      height: 250px;
+      width: 200px;`;
+
+      setTimeout(function () {
+        location.reload();
+      }, 1200);
+    }
+  }, 25);
+}, 2000);
+
+function draw2(timePassed) {
+  fire2.style.transform = 'scale(1, 1)';
+  fire2.style.bottom = (timePassed * 0.95) / 25 + '%';
+  //fire2.style.left = (timePassed * 0.95 / 30) + '%'
+}
