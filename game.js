@@ -186,3 +186,175 @@ function draw2(timePassed) {
   fire2.style.bottom = (timePassed * 0.95) / 25 + '%';
   //fire2.style.left = (timePassed * 0.95 / 30) + '%'
 }
+
+const fire3 = document.createElement('div');
+fire3.style.cssText = `
+    width: 10%;
+    position: absolute;
+    bottom: 100%;
+    left: 37%;
+    z-index: 2;
+    `;
+const fire3gif = document.createElement('img');
+fire3gif.src = './img/fireball.gif';
+fire3gif.style.cssText = `
+height: 80px;
+width: 80px;
+`;
+
+fire3.appendChild(fire3gif);
+area.appendChild(fire3);
+
+let fire3Fly = setInterval(function () {
+  let start = Date.now();
+  let timer = setInterval(function () {
+    let timePassed = Date.now() - start;
+    if (timePassed >= 2000) {
+      clearInterval(timer);
+      return;
+    }
+    if (position !== move.length - 1) {
+      if (timePassed < 2500) {
+        draw3(timePassed);
+      }
+    }
+
+    let climberRect = climber.getBoundingClientRect();
+    let fire3Rect = fire3gif.getBoundingClientRect();
+    if (
+      climberRect.top < fire3Rect.top &&
+      climberRect.bottom > fire3Rect.bottom &&
+      climberRect.right > fire3Rect.right &&
+      climberRect.left < fire3Rect.left
+    ) {
+      let climberimg = document.querySelector('.climberimg');
+      climberimg.src = './img/explode.gif';
+      climberimg.style.cssText = `
+      height: 250px;
+      width: 200px;`;
+      setTimeout(function () {
+        location.reload();
+      }, 1200);
+    }
+  }, 10);
+}, 2000);
+
+function draw3(timePassed) {
+  fire3.style.transform = 'scale(1, 1)';
+  fire3.style.top = (timePassed * 0.95) / 25 + '%';
+  //fire3.style.left = (timePassed * 0.6 / 45) + '%'
+}
+
+const fire4 = document.createElement('div');
+fire4.style.cssText = `
+    width: 10%;
+    position: absolute;
+    bottom: 100%;
+    left: 45%;
+    z-index: 2;
+    `;
+const fire4gif = document.createElement('img');
+fire4gif.src = './img/fireball.gif';
+fire4gif.style.cssText = `
+height: 80px;
+width: 80px;
+`;
+
+fire4.appendChild(fire4gif);
+area.appendChild(fire4);
+
+let fire4Fly = setInterval(function () {
+  let start = Date.now();
+  let timer = setInterval(function () {
+    let timePassed = Date.now() - start;
+    if (timePassed >= 2000) {
+      clearInterval(timer);
+      return;
+    }
+    if (position !== move.length - 1) {
+      if (timePassed < 2500) {
+        draw4(timePassed);
+      }
+    }
+
+    let climberRect = climber.getBoundingClientRect();
+    let fire4Rect = fire4gif.getBoundingClientRect();
+    if (
+      climberRect.top < fire4Rect.top &&
+      climberRect.bottom > fire4Rect.bottom &&
+      climberRect.right > fire4Rect.right &&
+      climberRect.left < fire4Rect.left
+    ) {
+      let climberimg = document.querySelector('.climberimg');
+      climberimg.src = './img/explode.gif';
+      climberimg.style.cssText = `
+      height: 250px;
+      width: 200px;`;
+      setTimeout(function () {
+        location.reload();
+      }, 1200);
+    }
+  }, 10);
+}, 2000);
+
+function draw4(timePassed) {
+  fire4.style.transform = 'scale(1, 1)';
+  fire4.style.bottom = (timePassed * 0.95) / 25 + '%';
+}
+
+const fire5 = document.createElement('div');
+fire5.style.cssText = `
+    width: 10%;
+    position: absolute;
+    bottom: 100%;
+    left: 57%;
+    z-index: 2;
+    `;
+const fire5gif = document.createElement('img');
+fire5gif.src = './img/fireball.gif';
+fire5gif.style.cssText = `
+height: 80px;
+width: 80px;
+`;
+
+fire5.appendChild(fire5gif);
+area.appendChild(fire5);
+
+let fire5Fly = setInterval(function () {
+  let start = Date.now();
+  let timer = setInterval(function () {
+    let timePassed = Date.now() - start;
+    if (timePassed >= 2000) {
+      clearInterval(timer);
+      return;
+    }
+    if (position !== move.length - 1) {
+      if (timePassed < 2500) {
+        draw5(timePassed);
+      }
+    }
+
+    let climberRect = climber.getBoundingClientRect();
+    let fire5Rect = fire5gif.getBoundingClientRect();
+    if (
+      climberRect.top < fire5Rect.top &&
+      climberRect.bottom > fire5Rect.bottom &&
+      climberRect.right > fire5Rect.right &&
+      climberRect.left < fire5Rect.left
+    ) {
+      let climberimg = document.querySelector('.climberimg');
+      climberimg.src = './img/explode.gif';
+      climberimg.style.cssText = `
+      height: 250px;
+      width: 200px;`;
+      setTimeout(function () {
+        location.reload();
+      }, 1200);
+    }
+  }, 10);
+}, 2000);
+
+function draw5(timePassed) {
+  fire5.style.transform = 'scale(1, 1)';
+  fire5.style.top = (timePassed * 0.95) / 21 + '%';
+}
