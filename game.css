@@ -80,12 +80,13 @@ span.btn {
 .lines {
   width: 50px;
   height: 6px;
-  background-color: black;
+  background-color: rgb(37, 99, 8);
   z-index: 2;
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: rgb(83, 189, 34);
 }
 
 .climber {

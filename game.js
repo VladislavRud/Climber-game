@@ -63,3 +63,27 @@ document.addEventListener('keydown', function (event) {
     }
   }
 });
+
+//Flying fire
+
+const area = document.querySelector('.main');
+
+const fire = document.createElement('div');
+fire.style.cssText = `
+    width: 10%;
+    position: absolute;
+    bottom: 100%;
+    left: 19%;
+    z-index: 2;
+    `;
+const firegif = document.createElement('img');
+firegif.src = './img/fireball.gif';
+firegif.style.cssText = `
+height: 80px;
+width: 80px;
+`;
+
+fire.appendChild(firegif);
+area.appendChild(fire);
+
+let fireStartFly = Date.now();
