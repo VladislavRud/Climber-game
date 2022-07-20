@@ -87,3 +87,44 @@ fire.appendChild(firegif);
 area.appendChild(fire);
 
 let fireStartFly = Date.now();
+
+let fireFly = setInterval(function () {
+  let start = Date.now();
+  let timer = setInterval(function () {
+    let timePassed = Date.now() - start;
+    if (timePassed >= 2000) {
+      clearInterval(timer);
+      return;
+    }
+    if (position !== move.length - 1) {
+      if (timePassed < 2500) {
+        draw(timePassed);
+      }
+    }
+
+    let climberRect = climber.getBoundingClientRect();
+    let fireRect = firegif.getBoundingClientRect();
+    if (
+      climberRect.top < fireRect.top &&
+      climberRect.bottom > fireRect.bottom &&
+      climberRect.right > fireRect.right &&
+      climberRect.left < fireRect.left
+    ) {
+      let climberimg = document.querySelector('.climberimg');
+      climberimg.src = './img/explode.gif';
+      climberimg.style.cssText = `
+        height: 250px;
+        width: 200px;`;
+
+      setTimeout(function () {
+        location.reload();
+      }, 1200);
+    }
+  }, 25);
+}, 2000);
+
+function draw(timePassed) {
+  fire.style.transform = 'scale(1, 1)';
+  fire.style.top = (timePassed * 0.95) / 25 + '%';
+  //fire.style.left = (timePassed * 0.95 / 23) + '%'
+}
