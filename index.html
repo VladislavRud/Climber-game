@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Climber</title>
-  </head>
 
-  <body>
-    <div class="main">
-      <div class="game">
-        <div class="mountain"></div>
-        <div class="lines" id="line1">
-          <div class="climber"></div>
-        </div>
-        <div class="lines" id="line2"></div>
-        <div class="lines" id="line3"></div>
-        <div class="lines" id="line4"></div>
-        <div class="lines" id="line5"></div>
-        <div class="lines" id="line6"></div>
-        <div class="lines" id="line7"></div>
-        <div class="flag"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climber</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="game">
+      <div class="mountain">
+        <img class="mountainimg" src="./img/mountains.png">
       </div>
+      <div class="lines" id="line1">
+        <div class="climber">
+          <img class="climberimg" src="./img/climber.gif">
+        </div>
+      </div>
+      <div class="lines" id="line2"></div>
+      <div class="lines" id="line3"></div>
+      <div class="lines" id="line4"></div>
+      <div class="lines" id="line5"></div>
+      <div class="lines" id="line6"></div>
+      <div class="lines" id="line7"></div>
+      <div class="flag">
+        <img class="flagimg" src="./img/win.gif">
+      </div>
+      <div class="enemy">
+        <img src="./img/enemy.gif" id="enemy">
+      </div>
+      <div class="avatar">
+        <img id="avatar" src="./img/avatar.png">
+        <div class="pressBtn">Press <span class="btn">'X'</span> for da forward</div>
+        <div class="pressBtn">Press <span class="btn">'Z'</span> for da... Ain't ya silly? </br>
+          I said ONLY FORWARD!</div>
+      </div>
+      <div class="score">
+      <img id="score" src="./img/score.png">
+        <div id="scorecount">0</div>
+      </div>
+      <div id="timer1"></div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
